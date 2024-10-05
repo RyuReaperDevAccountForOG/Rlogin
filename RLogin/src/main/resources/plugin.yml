@@ -1,0 +1,28 @@
+name: RLogin
+version: 2.0
+main: com.ryu.Rlogin.RLoginPlugin
+api-version: 1.20
+author: Ryu
+description: A plugin for managing player login and registration, supporting both premium and cracked players.
+commands:
+  register:
+    description: Register an account if you're a cracked player.
+    usage: /<command> <password> <confirmPassword>
+  login:
+    description: Log in with your account.
+    usage: /<command> <password>
+  passwordreset:
+    description: Request a password reset for your account.
+    usage: /<command> <reason>
+    permission: rlogin.reset
+  requestReset:
+    description: Request a password reset for another user (Admin only).
+    usage: /<command> <username>
+    permission: rlogin.requestreset
+permissions:
+  rlogin.reset:
+    description: Allows a player to request a password reset.
+    default: op
+  rlogin.requestreset:
+    description: Allows an admin to reset a user's password.
+    default: op
